@@ -25,13 +25,11 @@ namespace Module1
             {
                 if ((masInt[i] % 2) == 0)
                 {
-                    masStringEven[iEven] = Convert.ToChar(masInt[i] + 'a' - 1).ToString();
-                    iEven++;
+                    IntToMasString(masStringEven, masInt[i], ref iEven);
                 }
                 else
                 {
-                    masStringOdd[iOdd] = Convert.ToChar(masInt[i] + 'a' - 1).ToString();
-                    iOdd++;
+                    IntToMasString(masStringOdd, masInt[i], ref iOdd);
                 }
             }
 
@@ -44,6 +42,12 @@ namespace Module1
 
             PrintMas(masStringEven);
             PrintMas(masStringOdd);
+
+            void IntToMasString(string[] mas, int value, ref int count)
+            {
+                mas[count] = Convert.ToChar(value + 'a' - 1).ToString();
+                count++;
+            }
 
             void CountingUpper(string[] mas, out int numberUpper)
             {
