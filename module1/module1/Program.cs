@@ -35,6 +35,27 @@ namespace Module1
                 }
             }
 
+            CountingUpper(masStringEven, out numberUpperEven);
+            CountingUpper(masStringOdd, out numberUpperOdd);
+
+            void CountingUpper(string[] mas, out int numberUpper)
+            {
+                numberUpper = 0;
+
+                string[] letterUpper = { "a", "e", "i", "d", "h", "j" };
+
+                for (int i = 0; i < mas.Length; i++)
+                {
+                    for (int j = 0; j < letterUpper.Length; j++)
+                    {
+                        if (mas[i] == letterUpper[j])
+                        {
+                            mas[i] = mas[i].ToUpper();
+                            numberUpper++;
+                        }
+                    }
+                }
+            }
         }
     }
 }
