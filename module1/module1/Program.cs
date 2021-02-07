@@ -1,12 +1,19 @@
 ﻿using System;
 
-namespace module1
+namespace Module1
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var masLength = int.Parse(Console.ReadLine());
+
+            int[] masInt = new int[masLength];
+
+            for (int i = 0; i < masLength; i++)
+            {
+                masInt[i] = new Random().Next(1, 27);
+            }
         }
     }
 }
