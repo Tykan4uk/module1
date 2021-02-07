@@ -38,6 +38,13 @@ namespace Module1
             CountingUpper(masStringEven, out numberUpperEven);
             CountingUpper(masStringOdd, out numberUpperOdd);
 
+            char compareSign = numberUpperEven > numberUpperOdd ? '>' : (numberUpperEven == numberUpperOdd ? '=' : '<');
+
+            Console.WriteLine($"numberUpperEven {compareSign} numberUpperOdd");
+
+            PrintMas(masStringEven);
+            PrintMas(masStringOdd);
+
             void CountingUpper(string[] mas, out int numberUpper)
             {
                 numberUpper = 0;
@@ -55,6 +62,16 @@ namespace Module1
                         }
                     }
                 }
+            }
+
+            void PrintMas(string[] mas)
+            {
+                for (int i = 0; i < mas.Length; i++)
+                {
+                    Console.Write(mas[i] + ' ');
+                }
+
+                Console.WriteLine();
             }
         }
     }
